@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/utility.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <main class="container grid gap" style="--gap: 1rem; padding-top: 50px;">
+      <h1>CSS Design System</h1>
+      <section class="container" id="colors">
+        <h2><span>01</span> Colors</h2>
+        <div class="flex gap">
+          <div class="flex col">
+            <button class="color bg-dark left text-light uppercase" type="button">#141414</button>
+            <button class="text left">RGB(20, 20, 20)</button>
+            <button class="text left">HSL(0, 0%, 8%)</button>
+          </div>
+          <div class="flex col">
+            <button class="color bg-light text-dark left uppercase" type="button">#e6e6e6</button>
+            <button class="text left">RGB(230, 230, 230)</button>
+            <button class="text left">HSL(0, 0%, 90%)</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="hideContent">
+        <details>
+          <summary>Visually Hidden</summary>
+          <fieldset>
+            <legend>
+              Select Start and End Dates
+            </legend>
+            <label for="start_date" class="visually-hidden">
+              Start Date:
+            </label>
+            <input type="date" id="start_date" name="start_date">
+            <span>
+              to
+            </span>
+            <label for="end_date" class="visually-hidden">
+              End Date:
+            </label>
+            <input type="date" id="end_date" name="end_date">
+          </fieldset>
+          <input class="toggle" type="button" data-hidden="true" onclick="toggleVisuallyHidden(event)" value="Toggle Hidden Content">
+        </details>
+      </section>
+      
+      <section id="skipLinks">
+        <details>
+          <summary>Skip Links (use tab key to reveal)</summary>
+CS            <li>
+              <a href="#main_nav" class="skip-link">
+                Skip to Main Navigation
+              </a>
+            </li>
+            <li>
+              <a href="#main_content" class="skip-link">
+                Skip to Main Content
+              </a>
+            </li>
+          </ul>
+        </details>
+      </section>
+    </main>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

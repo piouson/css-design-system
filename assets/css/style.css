@@ -1,0 +1,23 @@
+@import url('./utility.css');
+
+button:not(.toggle) {
+  border-radius: 3px;
+}
+button.color {
+  min-width: 10rem;
+}
+button.color:not(.text) {
+  padding: 3rem 1rem 1rem 0.5rem;
+  border: 1px solid white;
+}
+button.text {
+  padding: 0;
+  border: unset;
+  background-color: unset;
+}
+button.left {
+  text-align: left;
+}
+button.toggle, [type="button"].toggle {
+  border-radius: 20px;
+}
