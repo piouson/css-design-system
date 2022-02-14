@@ -10,11 +10,6 @@
   color: inherit;
 }
 
-/* root font size 1rem = 10px */
-:root {
-  font-size: 62.5%;
-}
-
 /* Reset margin */
 body,
 h1,

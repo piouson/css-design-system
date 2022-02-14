@@ -13,10 +13,10 @@ button:not(.toggle) {
   border-radius: 3px;
 }
 .btn {
-  min-width: 10rem;
   cursor: pointer;
 }
 .btn-tall {
+  min-width: 10rem;
   padding: 3rem 1rem 1rem 0.5rem;
   border: 1px solid white;
 }
@@ -27,6 +27,9 @@ button:not(.toggle) {
 }
 .btn-left {
   text-align: left;
+}
+.btn-center {
+  text-align: center;
 }
 .btn-toggle {
   border-radius: 10px;
