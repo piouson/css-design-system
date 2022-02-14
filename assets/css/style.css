@@ -28,7 +28,7 @@ button:not(.toggle) {
 .btn-left {
   text-align: left;
 }
-.btn-center {
+.text-center {
   text-align: center;
 }
 .btn-toggle {
@@ -81,4 +81,7 @@ button:not(.toggle) {
   border: 5px;
   border-style: solid;
   border-color: rgb(var(--color-grey)) transparent transparent transparent;
+}
+.align-self-start {
+  align-self: flex-start;
 }
