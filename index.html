@@ -1,66 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CSS Design System</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/utility.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>CSS Design Tokens</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/utility.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
+
   <body>
-    <main class="container grid gap" style="--gap: 1rem; padding-top: 50px;">
-      <h1>CSS Design System</h1>
-      <section class="container" id="colors">
-        <h2><span>01</span> Colors</h2>
+    <main
+      class="container flow"
+      style="padding-block: 50px; --flow-space: 3rem"
+    >
+      <h1>CSS Design Tokens</h1>
+      <section id="colors">
+        <h2>Colors</h2>
         <div class="flex gap">
-          <div class="flex col">
-            <button class="color bg-dark left text-light uppercase" type="button">#141414</button>
-            <button class="text left">RGB(20, 20, 20)</button>
-            <button class="text left">HSL(0, 0%, 8%)</button>
+          <div class="flex flex-col">
+            <button
+              onclick="copyTooltipText(event)"
+              onmouseout="revertCopyText(event)"
+              class="btn btn-tall bg-dark btn-left text-light uppercase has-tooltip"
+              type="button"
+            >
+              <span class="tooltip copy-tooltip absolute-center-x text-light">
+                Copy
+              </span>
+              <span class="text">#141414</span>
+            </button>
+            <button
+              onclick="copyTooltipText(event)"
+              onmouseout="revertCopyText(event)"
+              class="btn btn-text-only btn-left has-tooltip"
+            >
+              <span class="tooltip copy-tooltip absolute-center-x text-light">
+                Copy
+              </span>
+              <span class="text">RGB(20, 20, 20)</span>
+            </button>
+            <button
+              onclick="copyTooltipText(event)"
+              onmouseout="revertCopyText(event)"
+              class="btn btn-text-only btn-left has-tooltip"
+            >
+              <span class="tooltip copy-tooltip absolute-center-x text-light">
+                Copy
+              </span>
+              <span class="text">HSL(0, 0%, 8%)</span>
+            </button>
           </div>
-          <div class="flex col">
-            <button class="color bg-light text-dark left uppercase" type="button">#e6e6e6</button>
-            <button class="text left">RGB(230, 230, 230)</button>
-            <button class="text left">HSL(0, 0%, 90%)</button>
+          <div class="flex flex-col">
+            <button
+              onclick="copyTooltipText(event)"
+              onmouseout="revertCopyText(event)"
+              class="btn btn-tall bg-light text-dark btn-left uppercase has-tooltip"
+              type="button"
+            >
+              <span class="tooltip copy-tooltip absolute-center-x text-light">
+                Copy
+              </span>
+              <span class="text">#e6e6e6</span>
+            </button>
+            <button
+              onclick="copyTooltipText(event)"
+              onmouseout="revertCopyText(event)"
+              class="btn btn-text-only btn-left has-tooltip"
+            >
+              <span class="tooltip copy-tooltip absolute-center-x text-light">
+                Copy
+              </span>
+              <span class="text">RGB(230, 230, 230)</span>
+            </button>
+            <button
+              onclick="copyTooltipText(event)"
+              onmouseout="revertCopyText(event)"
+              class="btn btn-text-only btn-left has-tooltip"
+            >
+              <span class="tooltip copy-tooltip absolute-center-x text-light">
+                Copy
+              </span>
+              <span class="text">HSL(0, 0%, 90%)</span>
+            </button>
           </div>
         </div>
+      </section>
+
+      <section id="typography">
+        <h2>Typography</h2>
+        <div class="flex">
+          <ul class="block-list flow" style="width: 100%; --flow-space: 1rem">
+            <li>
+              <p>Heading 1 - Roboto - 32px</p>
+              <p class="font-size-32 uppercase">A - Apple</p>
+            </li>
+            <li>
+              <p>Heading 2 - Roboto - 28px</p>
+              <p class="font-size-28 uppercase">B - Ball</p>
+            </li>
+            <li>
+              <p>Heading 3 - Roboto - 24px</p>
+              <p class="font-size-24 uppercase">C - Cat</p>
+            </li>
+            <li>
+              <p>Heading 4 - Roboto -</p>
+              <p class="font-size-20 uppercase">D - Dog</p>
+            </li>
+            <li>
+              <p>Heading 5 - Roboto -</p>
+              <p class="font-size-18 uppercase">E - Elephant</p>
+            </li>
+            <li>
+              <p>Heading 6 - Roboto -</p>
+              <p class="font-size-16 uppercase">F - Fish</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="components">
+        <a href="#" alt class="btn-large bg-dark text-light">Button</a>
       </section>
 
       <section id="hideContent">
         <details>
           <summary>Visually Hidden</summary>
           <fieldset>
-            <legend>
-              Select Start and End Dates
-            </legend>
+            <legend>Select Start and End Dates</legend>
             <label for="start_date" class="visually-hidden">
               Start Date:
             </label>
-            <input type="date" id="start_date" name="start_date">
-            <span>
-              to
-            </span>
-            <label for="end_date" class="visually-hidden">
-              End Date:
-            </label>
-            <input type="date" id="end_date" name="end_date">
+            <input type="date" id="start_date" name="start_date" />
+            <span> to </span>
+            <label for="end_date" class="visually-hidden"> End Date: </label>
+            <input type="date" id="end_date" name="end_date" />
           </fieldset>
-          <input class="toggle" type="button" data-hidden="true" onclick="toggleVisuallyHidden(event)" value="Toggle Hidden Content">
+          <input
+            class="btn-toggle"
+            type="button"
+            data-hidden="true"
+            onclick="toggleVisuallyHidden(event)"
+            value="Toggle Hidden Content"
+          />
         </details>
       </section>
-      
+
       <section id="skipLinks">
         <details>
           <summary>Skip Links (use tab key to reveal)</summary>
-CS            <li>
-              <a href="#main_nav" class="skip-link">
+          <p class="container">Press "tab" key here to reveal skip links</p>
+          <ul class="block-list">
+            <li>
+              <a href="#main_nav" class="no-underline skip-link">
                 Skip to Main Navigation
               </a>
             </li>
             <li>
-              <a href="#main_content" class="skip-link">
+              <a href="#main_content" class="no-underline skip-link">
                 Skip to Main Content
               </a>
             </li>

@@ -1,23 +1,81 @@
-@import url('./utility.css');
+@import url("utility.css");
 
+/* this css is for preview page and example usage - not part of the design system */
+
+.border-blue {
+  border: 1px solid blue;
+}
+
+section {
+  width: 100%;
+}
 button:not(.toggle) {
   border-radius: 3px;
 }
-button.color {
+.btn {
   min-width: 10rem;
+  cursor: pointer;
 }
-button.color:not(.text) {
+.btn-tall {
   padding: 3rem 1rem 1rem 0.5rem;
   border: 1px solid white;
 }
-button.text {
+.btn-text-only {
   padding: 0;
   border: unset;
   background-color: unset;
 }
-button.left {
+.btn-left {
   text-align: left;
 }
-button.toggle, [type="button"].toggle {
+.btn-toggle {
+  border-radius: 10px;
+}
+.btn-large {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 10rem;
+  padding-inline: 2rem;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  text-decoration: none;
+  z-index: 1;
+}
+.btn-large::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgb(var(--color-dark) / 0.1);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.6s, transform 0.3s;
+}
+.btn-large:hover::after,
+.btn-large:focus::after {
+  opacity: 1;
+  transform: scale(1.4);
+}
+.copy-tooltip {
+  padding: 4px 20px;
   border-radius: 20px;
+  background-color: rgb(var(--color-grey));
+  color: white;
+  bottom: 115%;
+  font-size: var(--font-size-12);
+  text-align: center;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+.copy-tooltip::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px;
+  border-style: solid;
+  border-color: rgb(var(--color-grey)) transparent transparent transparent;
 }
